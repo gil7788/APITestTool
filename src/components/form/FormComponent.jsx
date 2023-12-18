@@ -29,7 +29,7 @@ const FormComponent = ({ onResponse }) => {
       onResponse(response);
     } catch (error) {
       console.error('Error sending request:', error);
-      onResponse(error.response);
+      onResponse(error);
     }
   };
 
