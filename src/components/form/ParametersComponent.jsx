@@ -27,6 +27,7 @@ const ParametersComponent = ({ onParametersChange }) => {
 
   return (
     <div>
+      <h3 className='font-bold'>Parameters</h3>
       {parameters.map((parameter) => (
         <ParametersInput
           key={parameter.id}
@@ -35,7 +36,7 @@ const ParametersComponent = ({ onParametersChange }) => {
           deleteParameter={deleteParameter}
         />
       ))}
-      <button type="button" onClick={addParameter} className="bg-blue-500 text-white p-2 rounded mb-2">Add Parameter</button>
+      <button type="button" onClick={addParameter} className="bg-blue-500 text-white p-2 rounded mb-2 mt-1 w-4/12">Add Parameter</button>
     </div>
   );
 };

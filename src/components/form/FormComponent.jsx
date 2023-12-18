@@ -36,6 +36,7 @@ const FormComponent = ({ onResponse }) => {
   return (
     <div>
       <form onSubmit={handleSubmit} className="p-4">
+        <h3 className='font-bold'>URL</h3>
         <input
           type="text"
           value={url}
@@ -56,12 +57,13 @@ const FormComponent = ({ onResponse }) => {
 
         <HeadersComponent method={method} onHeadersChange={setHeaders} />
         
-        <p>Parameters</p>
         <ParametersComponent onParametersChange={setParameters} />
 
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded">
-          Send Request
-        </button>
+        <div className='flex justify-center mt-10'>
+          <button type="submit" className="bg-green-500 text-white p-2 rounded w-7/12 h-12">
+            Send Request
+          </button>
+        </div>
       </form>
     </div>
   );

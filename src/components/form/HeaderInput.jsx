@@ -30,7 +30,12 @@ const HeaderInput = ({ header, updateHeader, deleteHeader, options }) => {
         placeholder="Value"
         className="border p-2 rounded w-2/3"
       />
-      <button onClick={() => deleteHeader(header.id)} className="bg-red-500 text-white p-2 rounded ml-2">X</button>
+      <button
+        onClick={() => deleteHeader(header.id)}
+        className="bg-red-500 text-white rounded p-2 ml-2 flex items-center justify-center w-9 h-9"
+      >
+        X
+      </button>
     </div>
   );
 };

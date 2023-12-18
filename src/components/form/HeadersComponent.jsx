@@ -34,6 +34,7 @@ const HeadersComponent = ({ method, onHeadersChange }) => {
 
   return (
     <div>
+      <h3 className='font-bold'>Headers</h3>
       {headers.map((header) => (
         <HeaderInput
           key={header.id}
@@ -43,7 +44,7 @@ const HeadersComponent = ({ method, onHeadersChange }) => {
           options={headersOptions[method]}
         />
       ))}
-      <button type="button" onClick={addHeader} className="bg-blue-500 text-white p-2 rounded mb-2">Add Header</button>
+      <button type="button" onClick={addHeader} className="bg-blue-500 text-white p-2 rounded mb-2 mt-1 w-4/12">Add Header</button>
     </div>
   );
 };
