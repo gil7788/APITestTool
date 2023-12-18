@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './index.css';
 import FormComponent from "./components/form/FormComponent";
-import ResponseComponent from "./components/ResponseComponent";
+import ResponseComponent from "./components/response/ResponseComponent";
 
 export default function App() {
   const [responseData, setResponseData] = useState(null);
