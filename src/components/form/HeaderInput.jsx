@@ -1,9 +1,9 @@
 import React from 'react';
-import Select from 'react-select';
+import CreatableSelect from 'react-select/creatable';
 
 const HeaderInput = ({ header, updateHeader, deleteHeader, options }) => {
-  const handleKeyChange = (selectedOption) => {
-    updateHeader(header.id, 'key', selectedOption ? selectedOption.value : '');
+  const handleKeyChange = (newValue) => {
+    updateHeader(header.id, 'key', newValue ? newValue.value : '');
   };
 
   const handleValueChange = (event) => {
@@ -11,11 +11,10 @@ const HeaderInput = ({ header, updateHeader, deleteHeader, options }) => {
   };
 
   const selectOptions = options.map(option => ({ value: option, label: option }));
-  selectOptions.push({ value: header.key, label: header.key });
 
   return (
     <div className="flex items-center mb-2">
-      <Select
+      <CreatableSelect
         value={{ value: header.key, label: header.key }}
         onChange={handleKeyChange}
         options={selectOptions}
