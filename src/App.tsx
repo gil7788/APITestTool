@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './index.css';
-import FormComponent from "./components/FormComponent";
+import FormComponent from "./components/form/FormComponent";
 import ResponseComponent from "./components/ResponseComponent";
 
 export default function App() {
