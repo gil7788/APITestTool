@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import HeaderInput from './HeaderInput';
 
-const headersOptions = {
-  GET: ["Accept", "Authorization"],
-  POST: ["Content-Type", "Authorization"],
-  PUT: ["Content-Type", "Authorization"],
-  DELETE: ["Authorization"],
-};
 
-const HeadersComponent = ({ method, onHeadersChange }) => {
+const HeadersComponent = ({ method, onHeadersChange, headersOptions }) => {
   const [headers, setHeaders] = useState([{ id: Date.now(), key: '', value: '' }]);
 
   const addHeader = () => {

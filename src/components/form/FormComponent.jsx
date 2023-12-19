@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios'; 
 import HeadersComponent from './HeadersComponent';
 import ParametersComponent from './ParametersComponent';
+import headersConfig from '../../data/headersConfig';
+
 
 const FormComponent = ({ onResponse }) => {
   const [url, setUrl] = useState('');
@@ -59,7 +61,7 @@ const FormComponent = ({ onResponse }) => {
           <option value="DELETE">DELETE</option>
         </select>
 
-        <HeadersComponent method={method} onHeadersChange={setHeaders} />
+        <HeadersComponent method={method} onHeadersChange={setHeaders} headersOptions={headersConfig}/>
         
         <ParametersComponent onParametersChange={setParameters} />
 
