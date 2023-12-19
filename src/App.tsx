@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import './index.css';
-import axios, { AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 import FormComponent from "./components/form/FormComponent";
 import ResponseComponent from "./components/response/ResponseComponent";
 
