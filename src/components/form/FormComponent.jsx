@@ -12,18 +12,23 @@ const FormComponent = ({ onResponse }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     onResponse(null, true);
-
+  
+    const queryParams = parameters.map(({ name, value }) => `${encodeURIComponent(name)}=${encodeURIComponent(value)}`).join('&');
+    const fullUrl = method === 'GET' && queryParams ? `${url}?${queryParams}` : url;
+  
     try {
       const config = {
         method: method,
-        url: url,
+        url: fullUrl,
         headers: headers.reduce((acc, { key, value }) => {
           if (key && value) acc[key] = value;
           return acc;
         }, {}),
-        data: (method !== 'GET' && method !== 'DELETE') ? JSON.parse(headers.find(h => h.key === "Content-Type")?.value || '{}') : null,
+        data: (method !== 'GET' && method !== 'DELETE') ? 
+              JSON.stringify(Object.fromEntries(parameters.map(({ name, value }) => [name, value]))) : 
+              null,
       };
-
+  
       const response = await axios(config);
       console.log(response.data);
       onResponse(response, false);
@@ -32,7 +37,6 @@ const FormComponent = ({ onResponse }) => {
       onResponse(error, false);
     }
   };
-
   return (
     <div>
       <form onSubmit={handleSubmit} className="p-4">
