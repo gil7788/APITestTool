@@ -11,7 +11,7 @@ const FormComponent = ({ onResponse }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    onResponse(null);
+    onResponse(null, true);
 
     try {
       const config = {
@@ -26,10 +26,10 @@ const FormComponent = ({ onResponse }) => {
 
       const response = await axios(config);
       console.log(response.data);
-      onResponse(response);
+      onResponse(response, false);
     } catch (error) {
       console.error('Error sending request:', error);
-      onResponse(error);
+      onResponse(error, false);
     }
   };
 
